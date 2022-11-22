@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Text;
 
 namespace Mastermattie.FreeStyler.Tests
 {
@@ -11,6 +12,8 @@ namespace Mastermattie.FreeStyler.Tests
         private readonly IServiceProvider _provider;
         private readonly ILogger _logger;
         private readonly FreeStylerClient _client;
+
+        private readonly string _host = "LPTP-Matthijs";
 
         public FreeStylerTests()
         {
@@ -34,10 +37,13 @@ namespace Mastermattie.FreeStyler.Tests
         /// Connects to FreeStyler
         /// </summary>
         [TestMethod]
-        public void Connect()
+        public async Task Connect()
         {
+            if (_client.Connected)
+                return;
+
             _logger.LogInformation("Connecting...");
-            _client.Connect();
+            await _client.ConnectAsync(_host);
             Assert.IsTrue(_client.Connected, "Client not connected");
             _logger.LogInformation("Connected!");
         }
@@ -46,10 +52,13 @@ namespace Mastermattie.FreeStyler.Tests
         /// Disconnects from FreeStyler
         /// </summary>
         [TestMethod]
-        public void Disconnect()
+        public async Task Disconnect()
         {
+            if (!_client.Connected)
+                return;
+
             _logger.LogInformation("Disconnecting...");
-            _client.Disconnect();
+            await _client.DisconnectAsync();
             Assert.IsFalse(_client.Connected, "Client connected");
             _logger.LogInformation("Disconnected!");
         }
@@ -58,140 +67,195 @@ namespace Mastermattie.FreeStyler.Tests
         /// Toggle all fixtures
         /// </summary>
         [TestMethod]
-        public void ToggleAllFixtures()
+        public async Task ToggleAllFixtures()
         {
-            Connect();
+            await Connect();
 
             _logger.LogInformation("Toggle all fixtures");
-            _client.PressButton(FreeStylerCommand.ToggleAllFixtures);
+            var result = await _client.PressButtonAsync(FreeStylerCommand.ToggleAllFixtures);
+            Assert.IsTrue(result, "Button press failed!");
 
-            Disconnect();
+            await Disconnect();
         }
 
         /// <summary>
         /// Toggle favorite
         /// </summary>
         [TestMethod]
-        public void ToggleFavorite()
+        public async Task ToggleFavorite()
         {
-            Connect();
+            await Connect();
 
             _logger.LogInformation("Toggle favorite");
-            _client.PressButton(FreeStylerCommand.ToggleFavorite);
+            var result = await _client.PressButtonAsync(FreeStylerCommand.ToggleFavorite);
+            Assert.IsTrue(result, "Button press failed!");
 
-            Disconnect();
+            await Disconnect();
         }
 
         /// <summary>
         /// Toggle blackout
         /// </summary>
         [TestMethod]
-        public void ToggleBlackout()
+        public async Task ToggleBlackout()
         {
-            Connect();
+            await Connect();
 
             _logger.LogInformation("Toggle blackout");
-            _client.PressButton(FreeStylerCommand.ToggleBlackout);
+            var result = await _client.PressButtonAsync(FreeStylerCommand.ToggleBlackout);
+            Assert.IsTrue(result, "Button press failed!");
 
-            Disconnect();
+            await Disconnect();
         }
 
         /// <summary>
         /// Release all
         /// </summary>
         [TestMethod]
-        public void ReleaseAll()
+        public async Task ReleaseAll()
         {
-            Connect();
+            await Connect();
 
             _logger.LogInformation("Release all");
-            _client.PressButton(FreeStylerCommand.ReleaseAll);
+            var result = await _client.PressButtonAsync(FreeStylerCommand.ReleaseAll);
+            Assert.IsTrue(result, "Button press failed!");
 
-            Disconnect();
+            await Disconnect();
         }
 
         /// <summary>
         /// Fog / Smoke
         /// </summary>
         [TestMethod]
-        public void FogSmoke()
+        public async Task FogSmoke()
         {
-            Connect();
+            await Connect();
 
             _logger.LogInformation("Fog / Smoke");
-            _client.PressButton(FreeStylerCommand.FogSmoke, 1000);
+            var result = await _client.PressButtonAsync(FreeStylerCommand.FogSmoke, 1000);
+            Assert.IsTrue(result, "Button press failed!");
 
-            Disconnect();
+            await Disconnect();
         }
 
         /// <summary>
         /// Fog level to 0%
         /// </summary>
         [TestMethod]
-        public void FogLevelEmpty()
+        public async Task FogLevelEmpty()
         {
-            Connect();
+            await Connect();
 
             _logger.LogInformation("Fog level to 0%");
-            _client.SendCommand(FreeStylerCommand.FogLevel, 0);
+            var result = await _client.SendCommandAsync(FreeStylerCommand.FogLevel, 0);
+            Assert.IsTrue(result, "Send command failed!");
 
-            Disconnect();
+            await Disconnect();
         }
 
         /// <summary>
         /// Fog level to 100%
         /// </summary>
         [TestMethod]
-        public void FogLevelFull()
+        public async Task FogLevelFull()
         {
-            Connect();
+            await Connect();
 
             _logger.LogInformation("Fog level to 100%");
-            _client.SendCommand(FreeStylerCommand.FogLevel, 255);
+            var result = await _client.SendCommandAsync(FreeStylerCommand.FogLevel, 255);
+            Assert.IsTrue(result, "Send command failed!");
 
-            Disconnect();
+            await Disconnect();
         }
 
         /// <summary>
         /// Fog fan level to 0%
         /// </summary>
         [TestMethod]
-        public void FogFanLevelEmpty()
+        public async Task FogFanLevelEmpty()
         {
-            Connect();
+            await Connect();
 
             _logger.LogInformation("Fog fan level to 0%");
-            _client.SendCommand(FreeStylerCommand.FogFanLevel, 0);
+            var result = await _client.SendCommandAsync(FreeStylerCommand.FogFanLevel, 0);
+            Assert.IsTrue(result, "Send command failed!");
 
-            Disconnect();
+            await Disconnect();
         }
 
         /// <summary>
         /// Fog fan level to 100%
         /// </summary>
         [TestMethod]
-        public void FogFanLevelFull()
+        public async Task FogFanLevelFull()
         {
-            Connect();
+            await Connect();
 
             _logger.LogInformation("Fog fan level to 100%");
-            _client.SendCommand(FreeStylerCommand.FogFanLevel, 255);
+            var result = await _client.SendCommandAsync(FreeStylerCommand.FogFanLevel, 255);
+            Assert.IsTrue(result, "Send command failed!");
 
-            Disconnect();
+            await Disconnect();
         }
 
         /// <summary>
         /// Get cue captions
         /// </summary>
         [TestMethod]
-        public void GetCueCaptions()
+        public async Task GetCueCaptions()
         {
-            Connect();
+            await Connect();
 
             _logger.LogInformation("Get cue captions");
-            _client.SendRequest(FreeStylerRequest.CueCaptions);
+            var fields = await _client.SendRequestAsync(FreeStylerRequest.CueCaptions);
+            _logger.LogInformation(string.Join(Environment.NewLine, fields));
 
-            Disconnect();
+            await Disconnect();
+        }
+
+        /// <summary>
+        /// Get group names
+        /// </summary>
+        [TestMethod]
+        public async Task GetGroupNames()
+        {
+            await Connect();
+
+            _logger.LogInformation("Get group names");
+            var fields = await _client.SendRequestAsync(FreeStylerRequest.GroupNames);
+            _logger.LogInformation(string.Join(Environment.NewLine, fields));
+
+            await Disconnect();
+        }
+
+        /// <summary>
+        /// Get FreeStyler version
+        /// </summary>
+        [TestMethod]
+        public async Task GetFreestylerVersion()
+        {
+            await Connect();
+
+            _logger.LogInformation("Get FreeStyler version");
+            var fields = await _client.SendRequestAsync(FreeStylerRequest.FreeStylerVersion);
+            _logger.LogInformation(string.Join(Environment.NewLine, fields));
+
+            await Disconnect();
+        }
+
+        /// <summary>
+        /// Get fixture names
+        /// </summary>
+        [TestMethod]
+        public async Task GetFixtureNames()
+        {
+            await Connect();
+
+            _logger.LogInformation("Get fixture names");
+            var fields = await _client.SendRequestAsync(FreeStylerRequest.FixtureNames);
+            _logger.LogInformation(string.Join(Environment.NewLine, fields));
+
+            await Disconnect();
         }
     }
 }
