@@ -3,9 +3,9 @@
 
 ## TCP/IP
 ### Byte Protocol: 9 bytes
-| 0 | 1 | 2 | 3 | 4 - 5 | 6 | 7 - 8 |
-| - | - | - | - | ----- | - | ----- |
-| F | S | O | D |  XXX  | Y |  ZZZ  |
+|  0  |  1  |  2  |  3  | 4 - 5 |  6  |  7 - 8  |
+| :-: | :-: | :-: | :-: | :---: | :-: | :-----: |
+|  F  |  S  |  O  |  D  |  XXX  |  Y  |   ZZZ   |
 
 ```
 Byte 0: "F"  
@@ -20,9 +20,9 @@ Byte 7 and 8: (For later use)
 ```
 
 ### ASCII Protocol: 13 chars
-| 0 | 1 | 2 | 3 | 4 - 6 |  7 - 9  | 10 - 12 |
-| - | - | - | - | ----- | ------- | ------- |
-| F | S | O | C |  XXX  | 0 - 255 |   ZZZ   |
+|  0  |  1  |  2  |  3  | 4 - 6 |  7 - 9  | 10 - 12 |
+| :-: | :-: | :-: | :-: | :---: | :-----: | :-----: |
+|  F  |  S  |  O  |  C  |  XXX  | 0 - 255 |   ZZZ   |
 
 ```
 Char 0: "F"  
@@ -38,9 +38,9 @@ Char 10 to 12: Argument ("ZZZ")
 
 ## Request button captions and other data
 ### Byte Protocol: 9 bytes
-| 0 | 1 | 2 | 3 | 4 - 6 | 7 - 8 |
-| - | - | - | - | ----- | ----- |
-| F | S | B | C |  XXX  |  000  |
+|  0  |  1  |  2  |  3  |  4 - 6  |  7 - 8  |
+| :-: | :-: | :-: | :-: | :-----: | :-----: |
+|  F  |  S  |  B  |  C  |   XXX   |   000   |
 
 ```
 Byte 0: "F"  
@@ -52,7 +52,7 @@ Byte 7, 8 en 9: 0
 ```
 
 | Code | Description							|
-| ---- | -------------------------------------- |
+| :--- | :------------------------------------- |
 | 001  | Cue captions							|
 | 002  | Override button captions				|
 | 003  | Cuelist captions of current page		|
