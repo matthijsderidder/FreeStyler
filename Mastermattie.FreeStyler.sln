@@ -5,7 +5,15 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mastermattie.FreeStyler.Client", "Mastermattie.FreeStyler.Client\Mastermattie.FreeStyler.Client.csproj", "{9C6B8664-7919-4AB1-A2FA-927F67C7E343}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mastermattie.FreeStyler.Tests", "Mastermattie.FreeStyler.Tests\Mastermattie.FreeStyler.Tests.csproj", "{3BEE391C-273C-4323-9CCE-54AF4400EAB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mastermattie.FreeStyler.Tests", "Mastermattie.FreeStyler.Tests\Mastermattie.FreeStyler.Tests.csproj", "{3BEE391C-273C-4323-9CCE-54AF4400EAB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E53A6162-B657-435C-9587-9E4D0F4D8DCF}"
+	ProjectSection(SolutionItems) = preProject
+		freestyler_icon.ico = freestyler_icon.ico
+		freestyler_logo.png = freestyler_logo.png
+		README.md = README.md
+		Sendmessage and TCPIP.pdf = Sendmessage and TCPIP.pdf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

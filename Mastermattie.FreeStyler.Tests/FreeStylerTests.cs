@@ -42,10 +42,10 @@ namespace Mastermattie.FreeStyler.Tests
             if (_client.Connected)
                 return;
 
-            _logger.LogInformation("Connecting...");
+            _logger.LogDebug("Connecting...");
             await _client.ConnectAsync(_host);
             Assert.IsTrue(_client.Connected, "Client not connected");
-            _logger.LogInformation("Connected!");
+            _logger.LogDebug("Connected!");
         }
 
         /// <summary>
@@ -57,10 +57,10 @@ namespace Mastermattie.FreeStyler.Tests
             if (!_client.Connected)
                 return;
 
-            _logger.LogInformation("Disconnecting...");
+            _logger.LogDebug("Disconnecting...");
             await _client.DisconnectAsync();
             Assert.IsFalse(_client.Connected, "Client connected");
-            _logger.LogInformation("Disconnected!");
+            _logger.LogDebug("Disconnected!");
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Mastermattie.FreeStyler.Tests
         {
             await Connect();
 
-            _logger.LogInformation("Toggle all fixtures");
+            _logger.LogDebug("Toggle all fixtures");
             var result = await _client.PressButtonAsync(FreeStylerCommand.ToggleAllFixtures);
             Assert.IsTrue(result, "Button press failed!");
 
@@ -86,7 +86,7 @@ namespace Mastermattie.FreeStyler.Tests
         {
             await Connect();
 
-            _logger.LogInformation("Toggle favorite");
+            _logger.LogDebug("Toggle favorite");
             var result = await _client.PressButtonAsync(FreeStylerCommand.ToggleFavorite);
             Assert.IsTrue(result, "Button press failed!");
 
@@ -101,7 +101,7 @@ namespace Mastermattie.FreeStyler.Tests
         {
             await Connect();
 
-            _logger.LogInformation("Toggle blackout");
+            _logger.LogDebug("Toggle blackout");
             var result = await _client.PressButtonAsync(FreeStylerCommand.ToggleBlackout);
             Assert.IsTrue(result, "Button press failed!");
 
@@ -116,7 +116,7 @@ namespace Mastermattie.FreeStyler.Tests
         {
             await Connect();
 
-            _logger.LogInformation("Release all");
+            _logger.LogDebug("Release all");
             var result = await _client.PressButtonAsync(FreeStylerCommand.ReleaseAll);
             Assert.IsTrue(result, "Button press failed!");
 
@@ -131,7 +131,7 @@ namespace Mastermattie.FreeStyler.Tests
         {
             await Connect();
 
-            _logger.LogInformation("Fog / Smoke");
+            _logger.LogDebug("Fog / Smoke");
             var result = await _client.PressButtonAsync(FreeStylerCommand.FogSmoke, 1000);
             Assert.IsTrue(result, "Button press failed!");
 
@@ -146,7 +146,7 @@ namespace Mastermattie.FreeStyler.Tests
         {
             await Connect();
 
-            _logger.LogInformation("Fog level to 0%");
+            _logger.LogDebug("Fog level to 0%");
             var result = await _client.SendCommandAsync(FreeStylerCommand.FogLevel, 0);
             Assert.IsTrue(result, "Send command failed!");
 
@@ -161,7 +161,7 @@ namespace Mastermattie.FreeStyler.Tests
         {
             await Connect();
 
-            _logger.LogInformation("Fog level to 100%");
+            _logger.LogDebug("Fog level to 100%");
             var result = await _client.SendCommandAsync(FreeStylerCommand.FogLevel, 255);
             Assert.IsTrue(result, "Send command failed!");
 
@@ -176,7 +176,7 @@ namespace Mastermattie.FreeStyler.Tests
         {
             await Connect();
 
-            _logger.LogInformation("Fog fan level to 0%");
+            _logger.LogDebug("Fog fan level to 0%");
             var result = await _client.SendCommandAsync(FreeStylerCommand.FogFanLevel, 0);
             Assert.IsTrue(result, "Send command failed!");
 
@@ -191,7 +191,7 @@ namespace Mastermattie.FreeStyler.Tests
         {
             await Connect();
 
-            _logger.LogInformation("Fog fan level to 100%");
+            _logger.LogDebug("Fog fan level to 100%");
             var result = await _client.SendCommandAsync(FreeStylerCommand.FogFanLevel, 255);
             Assert.IsTrue(result, "Send command failed!");
 
@@ -206,8 +206,23 @@ namespace Mastermattie.FreeStyler.Tests
         {
             await Connect();
 
-            _logger.LogInformation("Get cue captions");
+            _logger.LogDebug("Get cue captions");
             var fields = await _client.SendRequestAsync(FreeStylerRequest.CueCaptions);
+            _logger.LogInformation(string.Join(Environment.NewLine, fields));
+
+            await Disconnect();
+        }
+
+        /// <summary>
+        /// Get cuelist captions
+        /// </summary>
+        [TestMethod]
+        public async Task GetCuelistCaptions()
+        {
+            await Connect();
+
+            _logger.LogDebug("Get cuelist captions");
+            var fields = await _client.SendRequestAsync(FreeStylerRequest.CuelistCaptionsAll);
             _logger.LogInformation(string.Join(Environment.NewLine, fields));
 
             await Disconnect();
@@ -221,7 +236,7 @@ namespace Mastermattie.FreeStyler.Tests
         {
             await Connect();
 
-            _logger.LogInformation("Get group names");
+            _logger.LogDebug("Get group names");
             var fields = await _client.SendRequestAsync(FreeStylerRequest.GroupNames);
             _logger.LogInformation(string.Join(Environment.NewLine, fields));
 
@@ -236,7 +251,7 @@ namespace Mastermattie.FreeStyler.Tests
         {
             await Connect();
 
-            _logger.LogInformation("Get FreeStyler version");
+            _logger.LogDebug("Get FreeStyler version");
             var fields = await _client.SendRequestAsync(FreeStylerRequest.FreeStylerVersion);
             _logger.LogInformation(string.Join(Environment.NewLine, fields));
 
@@ -244,16 +259,31 @@ namespace Mastermattie.FreeStyler.Tests
         }
 
         /// <summary>
-        /// Get fixture names
+        /// Get fixtures
         /// </summary>
         [TestMethod]
-        public async Task GetFixtureNames()
+        public async Task GetFixtures()
         {
-            await Connect();
+            await Connect();           
 
-            _logger.LogInformation("Get fixture names");
-            var fields = await _client.SendRequestAsync(FreeStylerRequest.FixtureNames);
-            _logger.LogInformation(string.Join(Environment.NewLine, fields));
+            _logger.LogDebug("Get fixture addresses");
+            var addresses = await _client.SendRequestAsync<byte>(FreeStylerRequest.FixtureAddresses);
+            Assert.IsNotNull(addresses, "No addresses received");
+
+            _logger.LogDebug("Get fixture names");
+            var names = await _client.SendRequestAsync(FreeStylerRequest.FixtureNames);
+            Assert.IsNotNull(names, "No names received");
+
+            _logger.LogDebug("Get fixture status");
+            var statuses = await _client.SendRequestAsync<byte>(FreeStylerRequest.FixtureSelectionStatuses);
+            Assert.IsNotNull(statuses, "No statuses received");
+
+            Assert.IsTrue((addresses.Length == names.Length && addresses.Length == statuses.Length), "Number of items do not match");
+
+            var sb = new StringBuilder();
+            for (var i = 0; i < addresses.Length; i++)
+                sb.AppendLine($"{(addresses[i]):D3}\t{statuses[i]}\t{names[i]}");
+            _logger.LogInformation(sb.ToString().TrimEnd());
 
             await Disconnect();
         }

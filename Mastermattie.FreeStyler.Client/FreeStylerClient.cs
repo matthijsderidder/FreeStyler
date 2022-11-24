@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
+using System.ComponentModel;
 using System.Net;
 using System.Net.Http;
 using System.Net.Sockets;
@@ -89,19 +90,26 @@ public class FreeStylerClient : IDisposable
     /// <param name="request"></param>
     /// <param name="args"></param>
     /// <returns></returns>
-    public async Task<string[]> SendRequestAsync(FreeStylerRequest request, params byte[] args)
+    public async Task<T[]> SendRequestAsync<T>(FreeStylerRequest request, params byte[] args)
     {
         var str = $"FSBC{((uint)request):D3}000";
         await SendTextAsync(str);
 
-        await Task.Delay(100);
-
         while (_client.Connected && _client.Available == 0)
             await Task.Delay(100);
-        
+
         var response = await ReceiveTextAsync();
-        return ParseResponse(response, "FSBC").ToArray();
+        return ParseResponse<T>(response, "FSBC").ToArray();
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="request"></param>
+    /// <param name="args"></param>
+    /// <returns></returns>
+    public async Task<string[]> SendRequestAsync(FreeStylerRequest request, params byte[] args)
+        => await SendRequestAsync<string>(request, args);
 
     /// <summary>
     /// 
@@ -183,13 +191,14 @@ public class FreeStylerClient : IDisposable
     /// </summary>
     /// <param name="str"></param>
     /// <param name="request"></param>
-    private IEnumerable<string> ParseResponse(string str, string request = ",")
+    private IEnumerable<T> ParseResponse<T>(string str, string request = ",")
     {
         if (!str.StartsWith(request)) yield break;
         str = str.Remove(0, 5);
 
-        var fields = str.Split(',');
-        foreach (var field in fields)
-            if (!string.IsNullOrEmpty(field) && field.Length > 1) yield return field;
+        var converter = TypeDescriptor.GetConverter(typeof(T));
+
+        foreach (var field in str.Split(','))
+            if (!string.IsNullOrEmpty(field)) yield return (T)converter.ConvertFrom(field);
     }
 }
