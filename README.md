@@ -100,7 +100,7 @@ Byte 7, 8 en 9: 0
 | Open Pan/Tilt						|	  5 | 1								| 255								| Fixed		|
 | Open beam							|     6 | 1								| 255								| Fixed		|
 | Open macro						|     7 | 1								| 255								| Fixed		|
-| Open dmx400						|     8 | 1								| 255								| Fixed		|
+| Open DMX400						|     8 | 1								| 255								| Fixed		|
 | Open Lamp							|    10 | 1								| 255								| Fixed		|
 | Open create sequence				|    11 | 1								| 255								| Fixed		|
 | Open cue							|    12 | 1								| 255								| Fixed		|
