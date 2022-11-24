@@ -91,8 +91,8 @@ Byte 7, 8 en 9: 0
 | Toggle Freeze						|   123	| 1								| 255								| Fixed		|
 | Release all						|    24	| 1								| 255								| Fixed		|
 | Fog / Smoke						|   176	| 1 (mousedown)<br>0 (mouseup)	| 255 (mousedown)<br>0 (mouseup)	| Button	|
-| Fog level							|   304	| 0-255							| 0-255								| Range		|
-| Fog fan level						|   305	| 0-255							| 0-255								| Range		|
+| Fog level							|   304	| 0 - 255						| 0 - 255							| Range		|
+| Fog fan level						|   305	| 0 - 255						| 0 - 255							| Range		|
 | Lock MIDI input					|   181	| 1								| 255								| Fixed		|
 | Open all							|   569 | 1								| 255								| Fixed		|
 | Open gobo							|     3 | 1								| 255								| Fixed		|
@@ -300,27 +300,27 @@ Byte 7, 8 en 9: 0
 | Stop sequence 18					|   542 | 1								| 255								| Fixed		|
 | Stop sequence 19					|   543 | 1								| 255								| Fixed		|
 | Stop sequence 20					|   544 | 1								| 255								| Fixed		|
-| Masterspeed						|   206	| 0-255							| 0-255								| Range		|
-| Sequence 1 speed					|   156	| 0-255							| 0-255								| Range		|
-| Sequence 2 speed					|   157	| 0-255							| 0-255								| Range		|
-| Sequence 3 speed					|   158	| 0-255							| 0-255								| Range		|
-| Sequence 4 speed					|   159	| 0-255							| 0-255								| Range		|
-| Sequence 5 speed					|   160	| 0-255							| 0-255								| Range		|
-| Sequence 6 speed					|   161	| 0-255							| 0-255								| Range		|
-| Sequence 7 speed					|   162	| 0-255							| 0-255								| Range		|
-| Sequence 8 speed					|   163	| 0-255							| 0-255								| Range		|
-| Sequence 9 speed					|   164	| 0-255							| 0-255								| Range		|
-| Sequence 10 speed					|   165	| 0-255							| 0-255								| Range		|
-| Sequence 11 speed					|   166	| 0-255							| 0-255								| Range		|
-| Sequence 12 speed					|   167	| 0-255							| 0-255								| Range		|
-| Sequence 13 speed					|   168	| 0-255							| 0-255								| Range		|
-| Sequence 14 speed					|   169	| 0-255							| 0-255								| Range		|
-| Sequence 15 speed					|   170	| 0-255							| 0-255								| Range		|
-| Sequence 16 speed					|   171	| 0-255							| 0-255								| Range		|
-| Sequence 17 speed					|   172	| 0-255							| 0-255								| Range		|
-| Sequence 18 speed					|   173	| 0-255							| 0-255								| Range		|
-| Sequence 19 speed					|   174	| 0-255							| 0-255								| Range		|
-| Sequence 20 speed					|   175	| 0-255							| 0-255								| Range		|
+| Masterspeed						|   206	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 1 speed					|   156	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 2 speed					|   157	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 3 speed					|   158	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 4 speed					|   159	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 5 speed					|   160	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 6 speed					|   161	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 7 speed					|   162	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 8 speed					|   163	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 9 speed					|   164	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 10 speed					|   165	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 11 speed					|   166	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 12 speed					|   167	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 13 speed					|   168	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 14 speed					|   169	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 15 speed					|   170	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 16 speed					|   171	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 17 speed					|   172	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 18 speed					|   173	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 19 speed					|   174	| 0 - 255						| 0 - 255							| Range		|
+| Sequence 20 speed					|   175	| 0 - 255						| 0 - 255							| Range		|
 | Disable all buttons				|   265	| 1								| 255								| Fixed		|
 | Previous Overr. tab				|   298 | 1								| 255								| Fixed		|
 | Next overr. tab					|   299 | 1								| 255								| Fixed		|
@@ -363,28 +363,28 @@ Byte 7, 8 en 9: 0
 | Override button 31				|    96 | 1 (mousedown)<br>0 (mouseup)	| 255 (mousedown)<br>0 (mouseup)	| Button	|
 | Override button 32				|    97 | 1 (mousedown)<br>0 (mouseup)	| 255 (mousedown)<br>0 (mouseup)	| Button	|
 | Overridebutton ...				|   348 | 1								| 255								| Fixed		|
-| Gobo 1 channel					|   124 | 0-255							| 0-255								| Range		|
-| Gobo 2 channel					|   125 | 0-255							| 0-255								| Range		|
-| Gobo Rotation channel				|   126 | 0-255							| 0-255								| Range		|
-| Gobo 2 Rotation channel			|   127 | 0-255							| 0-255								| Range		|
-| Color channel						|   128 | 0-255							| 0-255								| Range		|
-| Color 2 channel					|   129 | 0-255							| 0-255								| Range		|
-| Cyan channel						|   130 | 0-255							| 0-255								| Range		|
-| Magenta channel					|   131 | 0-255							| 0-255								| Range		|
-| Yellow channel					|   132 | 0-255							| 0-255								| Range		|
-| CTO/Amber channel					|   582 | 0-255							| 0-255								| Range		|
-| White1 channel					|   583 | 0-255							| 0-255								| Range		|
-| White2 channel					|   584 | 0-255							| 0-255								| Range		|
-| Pan 8bit channel					|   133 | 0-255							| 0-255								| Range		|
-| Tilt 8bit channel					|   135 | 0-255							| 0-255								| Range		|
-| Shutter channel					|   137 | 0-255							| 0-255								| Range		|
-| Intensity channel					|   138 | 0-255							| 0-255								| Range		|
-| Prism channel						|   139 | 0-255							| 0-255								| Range		|
-| Prism Rotation channel			|   140 | 0-255							| 0-255								| Range		|
-| Focus channel						|   141 | 0-255							| 0-255								| Range		|
-| Zoom channel						|   142 | 0-255							| 0-255								| Range		|
-| Iris channel						|   143 | 0-255							| 0-255								| Range		|
-| Frost channel						|   144 | 0-255							| 0-255								| Range		|
+| Gobo 1 channel					|   124 | 0 - 255						| 0 - 255							| Range		|
+| Gobo 2 channel					|   125 | 0 - 255						| 0 - 255							| Range		|
+| Gobo Rotation channel				|   126 | 0 - 255						| 0 - 255							| Range		|
+| Gobo 2 Rotation channel			|   127 | 0 - 255						| 0 - 255							| Range		|
+| Color channel						|   128 | 0 - 255						| 0 - 255							| Range		|
+| Color 2 channel					|   129 | 0 - 255						| 0 - 255							| Range		|
+| Cyan channel						|   130 | 0 - 255						| 0 - 255							| Range		|
+| Magenta channel					|   131 | 0 - 255						| 0 - 255							| Range		|
+| Yellow channel					|   132 | 0 - 255						| 0 - 255							| Range		|
+| CTO/Amber channel					|   582 | 0 - 255						| 0 - 255							| Range		|
+| White1 channel					|   583 | 0 - 255						| 0 - 255							| Range		|
+| White2 channel					|   584 | 0 - 255						| 0 - 255							| Range		|
+| Pan 8bit channel					|   133 | 0 - 255						| 0 - 255							| Range		|
+| Tilt 8bit channel					|   135 | 0 - 255						| 0 - 255							| Range		|
+| Shutter channel					|   137 | 0 - 255						| 0 - 255							| Range		|
+| Intensity channel					|   138 | 0 - 255						| 0 - 255							| Range		|
+| Prism channel						|   139 | 0 - 255						| 0 - 255							| Range		|
+| Prism Rotation channel			|   140 | 0 - 255						| 0 - 255							| Range		|
+| Focus channel						|   141 | 0 - 255						| 0 - 255							| Range		|
+| Zoom channel						|   142 | 0 - 255						| 0 - 255							| Range		|
+| Iris channel						|   143 | 0 - 255						| 0 - 255							| Range		|
+| Frost channel						|   144 | 0 - 255						| 0 - 255							| Range		|
 | Gobo ch. + 1						|   340 | 1								| 255								| Fixed		|
 | Gobo ch. - 1						|   341 | 1								| 255								| Fixed		|
 | Gobo2 ch. + 1						|   342 | 1								| 255								| Fixed		|
@@ -469,7 +469,7 @@ Byte 7, 8 en 9: 0
 | Master 0%							|   152 | 1								| 255								| Fixed		|
 | Fade In							|   153 | 1								| 255								| Fixed		|
 | Fade Out							|   154 | 1								| 255								| Fixed		|
-| Master Intensity					|   155 | 0-255							| 0-255								| Range		|
+| Master Intensity					|   155 | 0 - 255						| 0 - 255							| Range		|
 | Previous submaster tab			|   302 | 1								| 255								| Fixed		|
 | Next submaster tab				|   303 | 1								| 255								| Fixed		|
 | Toggle Submaster 1				|   182 | 1								| 255								| Fixed		|
@@ -491,11 +491,11 @@ Byte 7, 8 en 9: 0
 | Submaster Page 2					|   198 | 1								| 255								| Fixed		|
 | Submaster Page 3					|   199 | 1								| 255								| Fixed		|
 | Submaster Page 4					|   200 | 1								| 255								| Fixed		|
-| Subm. Intensity 1					|   201 | 0-255							| 0-255								| Range		|
-| Subm. Intensity 2					|   202 | 0-255							| 0-255								| Range		|
-| Subm. Intensity 3					|   203 | 0-255							| 0-255								| Range		|
-| Subm. Intensity 4					|   204 | 0-255							| 0-255								| Range		|
-| Subm. Intensity 5					|   205 | 0-255							| 0-255								| Range		|
+| Subm. Intensity 1					|   201 | 0 - 255						| 0 - 255							| Range		|
+| Subm. Intensity 2					|   202 | 0 - 255						| 0 - 255							| Range		|
+| Subm. Intensity 3					|   203 | 0 - 255						| 0 - 255							| Range		|
+| Subm. Intensity 4					|   204 | 0 - 255						| 0 - 255							| Range		|
+| Subm. Intensity 5					|   205 | 0 - 255						| 0 - 255							| Range		|
 | Submaster Run 1					|   385 | 1								| 255								| Fixed		|
 | Submaster Run 2					|   386 | 1								| 255								| Fixed		|
 | Submaster Run 3					|   387 | 1								| 255								| Fixed		|
@@ -576,70 +576,70 @@ Byte 7, 8 en 9: 0
 | Submaster Back 18					|   462 | 1								| 255								| Fixed		|
 | Submaster Back 19					|   463 | 1								| 255								| Fixed		|
 | Submaster Back 20					|   464 | 1								| 255								| Fixed		|
-| Submaster intens. 1				|   465 | 0-255							| 0-255								| Range		|
-| Submaster intens. 2				|   466 | 0-255							| 0-255								| Range		|
-| Submaster intens. 3				|   467 | 0-255							| 0-255								| Range		|
-| Submaster intens. 4				|   468 | 0-255							| 0-255								| Range		|
-| Submaster intens. 5				|   469 | 0-255							| 0-255								| Range		|
-| Submaster intens. 6				|   470 | 0-255							| 0-255								| Range		|
-| Submaster intens. 7				|   471 | 0-255							| 0-255								| Range		|
-| Submaster intens. 8				|   472 | 0-255							| 0-255								| Range		|
-| Submaster intens. 9				|   473 | 0-255							| 0-255								| Range		|
-| Submaster intens. 10				|   474 | 0-255							| 0-255								| Range		|
-| Submaster intens. 11				|   475 | 0-255							| 0-255								| Range		|
-| Submaster intens. 12				|   476 | 0-255							| 0-255								| Range		|
-| Submaster intens. 13				|   477 | 0-255							| 0-255								| Range		|
-| Submaster intens. 14				|   478 | 0-255							| 0-255								| Range		|
-| Submaster intens. 15				|   479 | 0-255							| 0-255								| Range		|
-| Submaster intens. 16				|   480 | 0-255							| 0-255								| Range		|
-| Submaster intens. 17				|   481 | 0-255							| 0-255								| Range		|
-| Submaster intens. 18				|   482 | 0-255							| 0-255								| Range		|
-| Submaster intens. 19				|   483 | 0-255							| 0-255								| Range		|
-| Submaster intens. 20				|   484 | 0-255							| 0-255								| Range		|
-| Submaster list change 1			|   595 | 0-255							| 0-255								| Range		|
-| Submaster list change 2			|   596 | 0-255							| 0-255								| Range		|
-| Submaster list change 3			|   597 | 0-255							| 0-255								| Range		|
-| Submaster list change 4			|   598 | 0-255							| 0-255								| Range		|
-| Submaster list change 5			|   599 | 0-255							| 0-255								| Range		|
-| Submaster list change 6			|   600 | 0-255							| 0-255								| Range		|
-| Submaster list change 7			|   601 | 0-255							| 0-255								| Range		|
-| Submaster list change 8			|   602 | 0-255							| 0-255								| Range		|
-| Submaster list change 9			|   603 | 0-255							| 0-255								| Range		|
-| Submaster list change 10			|   604 | 0-255							| 0-255								| Range		|
-| Submaster list change 11			|   605 | 0-255							| 0-255								| Range		|
-| Submaster list change 12			|   606 | 0-255							| 0-255								| Range		|
-| Submaster list change 13			|   607 | 0-255							| 0-255								| Range		|
-| Submaster list change 14			|   608 | 0-255							| 0-255								| Range		|
-| Submaster list change 15			|   609 | 0-255							| 0-255								| Range		|
-| Submaster list change 16			|   610 | 0-255							| 0-255								| Range		|
-| Submaster list change 17			|   611 | 0-255							| 0-255								| Range		|
-| Submaster list change 18			|   612 | 0-255							| 0-255								| Range		|
-| Submaster list change 19			|   613 | 0-255							| 0-255								| Range		|
-| Submaster list change 20			|   614 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 1						|   208 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 2						|   209 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 3						|   210 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 4						|   211 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 5						|   212 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 6						|   213 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 7						|   214 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 8						|   215 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 9						|   216 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 10					|   217 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 11					|   218 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 12					|   219 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 13					|   220 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 14					|   221 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 15					|   222 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 16					|   223 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 17					|   224 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 18					|   225 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 19					|   226 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 20					|   227 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 21					|   228 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 22					|   229 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 23					|   230 | 0-255							| 0-255								| Range		|
-| MIDI to DMX 24					|   231 | 0-255							| 0-255								| Range		|
+| Submaster intens. 1				|   465 | 0 - 255						| 0 - 255							| Range		|
+| Submaster intens. 2				|   466 | 0 - 255						| 0 - 255							| Range		|
+| Submaster intens. 3				|   467 | 0 - 255						| 0 - 255							| Range		|
+| Submaster intens. 4				|   468 | 0 - 255						| 0 - 255							| Range		|
+| Submaster intens. 5				|   469 | 0 - 255						| 0 - 255							| Range		|
+| Submaster intens. 6				|   470 | 0 - 255						| 0 - 255							| Range		|
+| Submaster intens. 7				|   471 | 0 - 255						| 0 - 255							| Range		|
+| Submaster intens. 8				|   472 | 0 - 255						| 0 - 255							| Range		|
+| Submaster intens. 9				|   473 | 0 - 255						| 0 - 255							| Range		|
+| Submaster intens. 10				|   474 | 0 - 255						| 0 - 255							| Range		|
+| Submaster intens. 11				|   475 | 0 - 255						| 0 - 255							| Range		|
+| Submaster intens. 12				|   476 | 0 - 255						| 0 - 255							| Range		|
+| Submaster intens. 13				|   477 | 0 - 255						| 0 - 255							| Range		|
+| Submaster intens. 14				|   478 | 0 - 255						| 0 - 255							| Range		|
+| Submaster intens. 15				|   479 | 0 - 255						| 0 - 255							| Range		|
+| Submaster intens. 16				|   480 | 0 - 255						| 0 - 255							| Range		|
+| Submaster intens. 17				|   481 | 0 - 255						| 0 - 255							| Range		|
+| Submaster intens. 18				|   482 | 0 - 255						| 0 - 255							| Range		|
+| Submaster intens. 19				|   483 | 0 - 255						| 0 - 255							| Range		|
+| Submaster intens. 20				|   484 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 1			|   595 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 2			|   596 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 3			|   597 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 4			|   598 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 5			|   599 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 6			|   600 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 7			|   601 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 8			|   602 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 9			|   603 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 10			|   604 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 11			|   605 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 12			|   606 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 13			|   607 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 14			|   608 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 15			|   609 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 16			|   610 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 17			|   611 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 18			|   612 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 19			|   613 | 0 - 255						| 0 - 255							| Range		|
+| Submaster list change 20			|   614 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 1						|   208 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 2						|   209 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 3						|   210 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 4						|   211 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 5						|   212 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 6						|   213 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 7						|   214 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 8						|   215 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 9						|   216 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 10					|   217 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 11					|   218 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 12					|   219 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 13					|   220 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 14					|   221 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 15					|   222 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 16					|   223 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 17					|   224 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 18					|   225 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 19					|   226 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 20					|   227 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 21					|   228 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 22					|   229 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 23					|   230 | 0 - 255						| 0 - 255							| Range		|
+| MIDI to DMX 24					|   231 | 0 - 255						| 0 - 255							| Range		|
 | Cuelist tab 1						|   266 | 1								| 255								| Fixed		|
 | Cuelist tab 2						|   267 | 1								| 255								| Fixed		|
 | Cuelist tab 3						|   268 | 1								| 255								| Fixed		|
@@ -665,15 +665,15 @@ Byte 7, 8 en 9: 0
 | Toggle Cuelist 15					|   286 | 1								| 255								| Fixed		|
 | Toggle Cuelist 16					|   287 | 1								| 255								| Fixed		|
 | DMX400 Toggle mode				|   564 | 1								| 255								| Fixed		|
-| DMX400 master						|   306 | 0-255							| 0-255								| Range		|
-| DMX400 background					|   307 | 0-255							| 0-255								| Range		|
+| DMX400 master						|   306 | 0 - 255						| 0 - 255							| Range		|
+| DMX400 background					|   307 | 0 - 255						| 0 - 255							| Range		|
 | DMX400 Program Select				|   308 | 1								| 255								| Fixed		|
-| DMX400 Speed						|   309 | 0-255							| 0-255								| Range		|
+| DMX400 Speed						|   309 | 0 - 255						| 0 - 255							| Range		|
 | DMX400 Blackout					|   310 | 1								| 255								| Fixed		|
 | DMX400 Full On					|   311 | 1 (mousedown)<br>0 (mouseup)	| 255 (mousedown)<br>0 (mouseup)	| Button	|
 | DMX400 Fade						|   312 | 1								| 255								| Fixed		|
-| DMX400 FadeTime					|   313 | 0-255							| 0-255								| Range		|
-| DMX400 Interval					|   314 | 0-255							| 0-255								| Range		|
+| DMX400 FadeTime					|   313 | 0 - 255						| 0 - 255							| Range		|
+| DMX400 Interval					|   314 | 0 - 255						| 0 - 255							| Range		|
 | DMX400 Auto Change				|   315 | 1								| 255								| Fixed		|
 | DMX400 Color Change				|   316 | 1								| 255								| Fixed		|
 | DMX400 Same Color					|   317 | 1								| 255								| Fixed		|
