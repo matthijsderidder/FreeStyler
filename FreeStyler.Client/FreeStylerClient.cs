@@ -1,12 +1,10 @@
-﻿using Microsoft.Extensions.Logging;
-using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Net;
-using System.Net.Http;
 using System.Net.Sockets;
 using System.Text;
 
-namespace Mastermattie.FreeStyler.Client;
+namespace FreeStyler.Client;
+
 public class FreeStylerClient : IDisposable
 {
     private readonly TcpClient _client = new TcpClient();
@@ -199,6 +197,6 @@ public class FreeStylerClient : IDisposable
         var converter = TypeDescriptor.GetConverter(typeof(T));
 
         foreach (var field in str.Split(','))
-            if (!string.IsNullOrEmpty(field)) yield return (T)converter.ConvertFrom(field);
+            if (!string.IsNullOrEmpty(field)) yield return (T)converter.ConvertFrom(field) ?? default(T);
     }
 }

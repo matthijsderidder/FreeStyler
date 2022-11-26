@@ -39,7 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mastermattie.FreeStyler.Client\Mastermattie.FreeStyler.Client.csproj" />
+    <ProjectReference Include="..\FreeStyler.Client\FreeStyler.Client.csproj" />
   </ItemGroup>
 
 </Project>

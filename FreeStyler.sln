@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mastermattie.FreeStyler.Client", "Mastermattie.FreeStyler.Client\Mastermattie.FreeStyler.Client.csproj", "{9C6B8664-7919-4AB1-A2FA-927F67C7E343}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeStyler.Client", "FreeStyler.Client\FreeStyler.Client.csproj", "{9C6B8664-7919-4AB1-A2FA-927F67C7E343}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mastermattie.FreeStyler.Tests", "Mastermattie.FreeStyler.Tests\Mastermattie.FreeStyler.Tests.csproj", "{3BEE391C-273C-4323-9CCE-54AF4400EAB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeStyler.Tests", "FreeStyler.Tests\FreeStyler.Tests.csproj", "{3BEE391C-273C-4323-9CCE-54AF4400EAB1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E53A6162-B657-435C-9587-9E4D0F4D8DCF}"
 	ProjectSection(SolutionItems) = preProject

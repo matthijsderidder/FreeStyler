@@ -1,10 +1,10 @@
-﻿using Mastermattie.FreeStyler.Client;
+﻿using FreeStyler.Client;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Text;
 
-namespace Mastermattie.FreeStyler.Tests
+namespace FreeStyler.Tests
 {
     [TestClass]
     public class FreeStylerTests

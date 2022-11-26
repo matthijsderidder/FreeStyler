@@ -1,4 +1,4 @@
-﻿namespace Mastermattie.FreeStyler.Client
+﻿namespace FreeStyler.Client
 {
     /// <summary>
     /// Send Command
