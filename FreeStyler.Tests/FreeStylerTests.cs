@@ -13,7 +13,7 @@ namespace FreeStyler.Tests
         private readonly ILogger _logger;
         private readonly FreeStylerClient _client;
 
-        private readonly string _host = "LPTP-Matthijs";
+        private readonly string _host = "localhost";
 
         public FreeStylerTests()
         {
